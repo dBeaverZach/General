@@ -40,6 +40,9 @@
 					"@dbeaver-chosen-role@": ""
 				},
 				"auth-model": "native"
+			},
+			"extensions": {
+				"dashboards": "\u003cdashboardList\u003e\u003cdashboards id\u003d\"default\" name\u003d\"Default\"\u003e\u003cview/\u003e\u003cdashboard id\u003d\"database:postgresql.sessionCount\" viewType\u003d\"timeseries\" index\u003d\"0\" widthRatio\u003d\"1.5\" updatePeriod\u003d\"2000\" maxItems\u003d\"300\" maxAge\u003d\"1800000\" legendVisible\u003d\"true\" gridVisible\u003d\"true\" domainTicksVisible\u003d\"true\" rangeTicksVisible\u003d\"true\" description\u003d\"Shows active/idle server sessions\"/\u003e\u003cdashboard id\u003d\"database:postgresql.transactionCount\" viewType\u003d\"timeseries\" index\u003d\"1\" widthRatio\u003d\"1.5\" updatePeriod\u003d\"2000\" maxItems\u003d\"300\" maxAge\u003d\"1800000\" legendVisible\u003d\"true\" gridVisible\u003d\"true\" domainTicksVisible\u003d\"true\" rangeTicksVisible\u003d\"true\" description\u003d\"Shows commit/rollback transactions per second\"/\u003e\u003c/dashboards\u003e\u003c/dashboardList\u003e"
 			}
 		},
 		"microsoft-1951fa13860-455f53789aeaa567": {
@@ -177,9 +180,58 @@
 				},
 				"auth-model": "snowflake_snowflake"
 			}
+		},
+		"google_bigquery_jdbc_simba_pro-19539294c1a-74d81d5651f2a466": {
+			"provider": "bigquery.ee",
+			"driver": "google_bigquery_jdbc_simba_pro",
+			"origin": {
+				"$type": "cloud",
+				"$configuration": "gcp",
+				"cloud-provider": "gcp",
+				"cloud-id": "gcp",
+				"cloud-zone-id": "us-central1",
+				"gcp-project": "supple-cabinet-437219-m3",
+				"gcp-resource": "supple-cabinet-437219-m3",
+				"gcp-node-id": "supple-cabinet-437219-m3"
+			},
+			"name": "Google BigQuery - supple-cabinet-437219-m3",
+			"save-password": true,
+			"configuration": {
+				"database": "supple-cabinet-437219-m3",
+				"configurationType": "MANUAL",
+				"type": "dev",
+				"closeIdleConnection": true,
+				"auth-model": "gcp_cloud_iam_bigquery"
+			},
+			"extensions": {
+				"dashboards": "\u003cdashboardList\u003e\u003cdashboards id\u003d\"default\" name\u003d\"Default\"\u003e\u003cview openConnectionOnActivate\u003d\"true\"/\u003e\u003c/dashboards\u003e\u003c/dashboardList\u003e"
+			}
+		},
+		"google_bigquery_jdbc_simba_pro-19539427e3a-1b5e9d65ab166848": {
+			"provider": "bigquery.ee",
+			"driver": "google_bigquery_jdbc_simba_pro",
+			"origin": {
+				"$type": "cloud",
+				"$configuration": "gcp_2",
+				"cloud-provider": "gcp",
+				"cloud-id": "gcp_2",
+				"cloud-zone-id": "us-central1",
+				"gcp-project": "dbeavergcp",
+				"gcp-resource": "dbeavergcp",
+				"gcp-node-id": "dbeavergcp"
+			},
+			"name": "Google BigQuery - dbeavergcp",
+			"save-password": true,
+			"configuration": {
+				"database": "dbeavergcp",
+				"configurationType": "MANUAL",
+				"type": "dev",
+				"closeIdleConnection": true,
+				"auth-model": "gcp_cloud_iam_bigquery"
+			}
 		}
 	},
-	"virtual-models": {"mysql8-1951fa1ed50-13a009561121434d":{"Chinook":{":InvoiceLine":{"constraints":{"InvoiceLine_VK":{"type":"vpk","attributes":["InvoiceId"]}}},":Track":{"constraints":{"Track_VK":{"type":"vpk","attributes":["MediaTypeId"]},"Track_VK":{"type":"vpk","attributes":["AlbumId"]},"Track_VK":{"type":"vpk","attributes":["GenreId"]}}}}}},
+	"virtual-models": {"mysql8-1951fa1ed50-13a009561121434d":{"Chinook":{":InvoiceLine":{"constraints":{"InvoiceLine_VK":{"type":"vpk","attributes":["InvoiceId"]}}},":Track":{"properties":{"erd.diagram.state":{"serialized":"\u003cdiagram version\u003d\"1\" name\u003d\"empty\" time\u003d\"202502261126\"\u003e\u003centities\u003e\u003cdata-source id\u003d\"mysql8-1951fa1ed50-13a009561121434d\"\u003e\u003centity id\u003d\"1\" name\u003d\"Track\" fq-name\u003d\"Chinook.Track\" order\u003d\"0\" color-bg\u003d\"128,64,32\" x\u003d\"241\" y\u003d\"44\"\u003e\u003cpath name\u003d\"Chinook\"/\u003e\u003c/entity\u003e\u003centity id\u003d\"2\" name\u003d\"Album\" fq-name\u003d\"Chinook.Album\" order\u003d\"1\" x\u003d\"455\" y\u003d\"40\"\u003e\u003cpath name\u003d\"Chinook\"/\u003e\u003c/entity\u003e\u003centity id\u003d\"3\" name\u003d\"Genre\" fq-name\u003d\"Chinook.Genre\" order\u003d\"2\" x\u003d\"455\" y\u003d\"204\"\u003e\u003cpath name\u003d\"Chinook\"/\u003e\u003c/entity\u003e\u003centity id\u003d\"4\" name\u003d\"MediaType\" fq-name\u003d\"Chinook.MediaType\" order\u003d\"3\" x\u003d\"455\" y\u003d\"348\"\u003e\u003cpath name\u003d\"Chinook\"/\u003e\u003c/entity\u003e\u003centity id\u003d\"5\" name\u003d\"InvoiceLine\" fq-name\u003d\"Chinook.InvoiceLine\" order\u003d\"4\" x\u003d\"40\" y\u003d\"87\"\u003e\u003cpath name\u003d\"Chinook\"/\u003e\u003c/entity\u003e\u003centity id\u003d\"6\" name\u003d\"PlaylistTrack\" fq-name\u003d\"Chinook.PlaylistTrack\" order\u003d\"5\" x\u003d\"40\" y\u003d\"291\"\u003e\u003cpath name\u003d\"Chinook\"/\u003e\u003c/entity\u003e\u003c/data-source\u003e\u003c/entities\u003e\u003crelations\u003e\u003crelation name\u003d\"FK_InvoiceLineTrackId\" fq-name\u003d\"Chinook.InvoiceLine.FK_InvoiceLineTrackId\" type\u003d\"fk\" pk-ref\u003d\"1\" fk-ref\u003d\"5\"/\u003e\u003crelation name\u003d\"FK_PlaylistTrackTrackId\" fq-name\u003d\"Chinook.PlaylistTrack.FK_PlaylistTrackTrackId\" type\u003d\"fk\" pk-ref\u003d\"1\" fk-ref\u003d\"6\"/\u003e\u003crelation name\u003d\"FK_TrackAlbumId\" fq-name\u003d\"Chinook.Track.FK_TrackAlbumId\" type\u003d\"fk\" pk-ref\u003d\"2\" fk-ref\u003d\"1\"/\u003e\u003crelation name\u003d\"FK_TrackGenreId\" fq-name\u003d\"Chinook.Track.FK_TrackGenreId\" type\u003d\"fk\" pk-ref\u003d\"3\" fk-ref\u003d\"1\"/\u003e\u003crelation name\u003d\"FK_TrackMediaTypeId\" fq-name\u003d\"Chinook.Track.FK_TrackMediaTypeId\" type\u003d\"fk\" pk-ref\u003d\"4\" fk-ref\u003d\"1\"/\u003e\u003c/relations\u003e\u003c/diagram\u003e"}},"constraints":{"Track_VK":{"type":"vpk","attributes":["GenreId"]}}}}}},
 	"connection-types": {
 		"dev": {
 			"name": "Development",
@@ -194,6 +246,27 @@
 			"close-transactions-period": 1800,
 			"auto-close-connections": true,
 			"close-connections-period": 14400
+		}
+	},
+	"external-configurations": {
+		"gcp": {
+			"credentials": {
+				"authType": "DEFAULT",
+				"projectId": "dbeavergcp",
+				"ssoOverCli": false
+			},
+			"cloudId": "gcp",
+			"cloudName": "GCP configuration"
+		},
+		"gcp_2": {
+			"credentials": {
+				"authType": "SERVICE_ACCOUNT",
+				"serviceAccountConfigPath": "/Users/zachantunes/Downloads/dbeavertest.json",
+				"projectId": "dbeavergcp",
+				"ssoOverCli": false
+			},
+			"cloudId": "gcp_2",
+			"cloudName": "GCP JSON connection"
 		}
 	}
 }
