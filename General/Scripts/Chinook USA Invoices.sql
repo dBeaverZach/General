@@ -1,1 +1,1 @@
-SELECT * from Chinook.Invoice i where BillingCountry = 'Mexico';
+SELECT * from Chinook.Invoice i where BillingCountry = 'USA';
