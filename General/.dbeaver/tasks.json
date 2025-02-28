@@ -177,6 +177,78 @@
 				}
 			],
 			"configuration": {
+				"maxJobCount": 1.0,
+				"showFinalMessage": true,
+				"DatabaseTransferProducer": {
+					"extractType": "SINGLE_QUERY",
+					"segmentSize": 100000.0,
+					"fetchSize": 10000.0,
+					"openNewConnections": false,
+					"queryRowCount": false,
+					"selectedColumnsOnly": false,
+					"selectedRowsOnly": false
+				},
+				"StreamTransferConsumer": {
+					"lobExtractType": "INLINE",
+					"lobEncoding": "BINARY",
+					"dataFileConflictBehavior": "ASK",
+					"blobFileConflictBehavior": "ASK",
+					"outputFolder": "/Users/zachantunes/Downloads",
+					"outputFilePattern": "${table}_${timestamp}",
+					"outputEncoding": "UTF-8",
+					"outputTimestampPattern": "yyyyMMddHHmm",
+					"outputEncodingBOM": false,
+					"outputClipboard": false,
+					"useSingleFile": false,
+					"compressResults": false,
+					"splitOutFiles": false,
+					"maxOutFileSize": 1.0E7,
+					"formatterProfile": "",
+					"valueFormat": "UI"
+				},
+				"producer": "database_producer",
+				"consumer": "stream_consumer",
+				"processor": "stream.csv",
+				"processors": {
+					"stream_consumer:stream.csv": {
+						"@propNames": "quoteChar,rowDelimiter,extension,headerFormat,delimiter,header,formatNumbers,quoteAlways,headerCase,quoteNever,escape,",
+						"quoteChar": "\"",
+						"rowDelimiter": "default",
+						"extension": "csv",
+						"headerFormat": "label",
+						"delimiter": ",",
+						"header": "top",
+						"formatNumbers": "false",
+						"quoteAlways": "disabled",
+						"headerCase": "as is",
+						"quoteNever": "false",
+						"escape": "quotes"
+					}
+				}
+			}
+		}
+	},
+	"41695c62-025e-40f3-be58-7687d6cdf291": {
+		"task": "dataExport",
+		"label": "Pokemon Export",
+		"description": "",
+		"createTime": "202502271501",
+		"updateTime": "202502271501",
+		"state": {
+			"producers": [
+				{
+					"type": "databaseTransferProducer",
+					"location": {
+						"type": "unknown"
+					}
+				}
+			],
+			"consumers": [
+				{
+					"type": "streamTransferConsumer"
+				}
+			],
+			"configuration": {
 				"maxJobCount": 1,
 				"showFinalMessage": true,
 				"DatabaseTransferProducer": {
@@ -226,6 +298,12 @@
 						"escape": "quotes"
 					}
 				}
+			},
+			"taskContext": {
+				"defaultCatalog": "postgres",
+				"defaultSchema": "public",
+				"autoCommit": true,
+				"transactionIsolation": 0
 			}
 		}
 	}
