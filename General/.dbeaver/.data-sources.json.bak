@@ -23,9 +23,7 @@
 			"driver": "postgres-jdbc",
 			"name": "Postgres",
 			"save-password": true,
-			"navigator-show-only-entities": true,
-			"navigator-hide-folders": true,
-			"navigator-hide-virtual": true,
+			"show-system-objects": true,
 			"configuration": {
 				"host": "localhost",
 				"port": "5432",
@@ -42,7 +40,7 @@
 				"auth-model": "native"
 			},
 			"extensions": {
-				"dashboards": "\u003cdashboardList\u003e\u003cdashboards id\u003d\"default\" name\u003d\"Default\"\u003e\u003cview/\u003e\u003cdashboard id\u003d\"database:postgresql.sessionCount\" viewType\u003d\"timeseries\" index\u003d\"0\" widthRatio\u003d\"1.5\" updatePeriod\u003d\"2000\" maxItems\u003d\"300\" maxAge\u003d\"1800000\" legendVisible\u003d\"true\" gridVisible\u003d\"true\" domainTicksVisible\u003d\"true\" rangeTicksVisible\u003d\"true\" description\u003d\"Shows active/idle server sessions\"/\u003e\u003cdashboard id\u003d\"database:postgresql.transactionCount\" viewType\u003d\"timeseries\" index\u003d\"1\" widthRatio\u003d\"1.5\" updatePeriod\u003d\"2000\" maxItems\u003d\"300\" maxAge\u003d\"1800000\" legendVisible\u003d\"true\" gridVisible\u003d\"true\" domainTicksVisible\u003d\"true\" rangeTicksVisible\u003d\"true\" description\u003d\"Shows commit/rollback transactions per second\"/\u003e\u003c/dashboards\u003e\u003c/dashboardList\u003e"
+				"dashboards": "\u003cdashboardList\u003e\u003cdashboards id\u003d\"default\" name\u003d\"Default\"\u003e\u003cview/\u003e\u003cdashboard id\u003d\"database:postgresql.sessionCount\" viewType\u003d\"timeseries\" index\u003d\"0\" widthRatio\u003d\"1.5\" updatePeriod\u003d\"2000\" maxItems\u003d\"300\" maxAge\u003d\"1800000\" legendVisible\u003d\"true\" gridVisible\u003d\"true\" domainTicksVisible\u003d\"true\" rangeTicksVisible\u003d\"true\" description\u003d\"Shows active/idle server sessions\"/\u003e\u003cdashboard id\u003d\"database:postgresql.transactionCount\" viewType\u003d\"timeseries\" index\u003d\"1\" widthRatio\u003d\"1.5\" updatePeriod\u003d\"2000\" maxItems\u003d\"300\" maxAge\u003d\"1800000\" legendVisible\u003d\"true\" gridVisible\u003d\"true\" domainTicksVisible\u003d\"true\" rangeTicksVisible\u003d\"true\" description\u003d\"Shows commit/rollback transactions per second\"/\u003e\u003cdashboard id\u003d\"database:postgresql.blockIO\" viewType\u003d\"timeseries\" index\u003d\"2\" widthRatio\u003d\"1.5\" updatePeriod\u003d\"2000\" maxItems\u003d\"300\" maxAge\u003d\"1800000\" legendVisible\u003d\"true\" gridVisible\u003d\"true\" domainTicksVisible\u003d\"true\" rangeTicksVisible\u003d\"true\" description\u003d\"Shows blocking IO operations per second\"/\u003e\u003c/dashboards\u003e\u003c/dashboardList\u003e"
 			}
 		},
 		"microsoft-1951fa13860-455f53789aeaa567": {
@@ -73,9 +71,7 @@
 			"driver": "mysql8",
 			"name": "MySQL",
 			"save-password": true,
-			"navigator-show-only-entities": true,
-			"navigator-hide-folders": true,
-			"navigator-hide-virtual": true,
+			"show-system-objects": true,
 			"configuration": {
 				"host": "localhost",
 				"port": "3306",
