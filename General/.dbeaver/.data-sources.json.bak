@@ -177,7 +177,7 @@
 				"auth-model": "snowflake_snowflake"
 			}
 		},
-		"google_bigquery_jdbc_simba_pro-19539294c1a-74d81d5651f2a466": {
+		"google_bigquery_jdbc_simba_pro-19563e5f63d-469d5c4fec8f095e": {
 			"provider": "bigquery.ee",
 			"driver": "google_bigquery_jdbc_simba_pro",
 			"origin": {
@@ -186,44 +186,43 @@
 				"cloud-provider": "gcp",
 				"cloud-id": "gcp",
 				"cloud-zone-id": "us-central1",
-				"gcp-project": "supple-cabinet-437219-m3",
-				"gcp-resource": "supple-cabinet-437219-m3",
-				"gcp-node-id": "supple-cabinet-437219-m3"
+				"gcp-project": "cloud-sql-chinook",
+				"gcp-resource": "cloud-sql-chinook",
+				"gcp-node-id": "cloud-sql-chinook"
 			},
-			"name": "Google BigQuery - supple-cabinet-437219-m3",
+			"name": "Google BigQuery - cloud-sql-chinook",
 			"save-password": true,
+			"virtual-model-id": "bigquery_cloud-sql-chinook",
 			"configuration": {
-				"database": "supple-cabinet-437219-m3",
+				"database": "cloud-sql-chinook",
 				"configurationType": "MANUAL",
 				"type": "dev",
 				"closeIdleConnection": true,
 				"auth-model": "gcp_cloud_iam_bigquery"
-			},
-			"extensions": {
-				"dashboards": "\u003cdashboardList\u003e\u003cdashboards id\u003d\"default\" name\u003d\"Default\"\u003e\u003cview openConnectionOnActivate\u003d\"true\"/\u003e\u003c/dashboards\u003e\u003c/dashboardList\u003e"
 			}
 		},
-		"google_bigquery_jdbc_simba_pro-19539427e3a-1b5e9d65ab166848": {
-			"provider": "bigquery.ee",
-			"driver": "google_bigquery_jdbc_simba_pro",
+		"aws_athena_jdbc_simba-19563e669dc-2c3c86d715afa782": {
+			"provider": "athena",
+			"driver": "aws_athena_jdbc_simba",
 			"origin": {
 				"$type": "cloud",
-				"$configuration": "gcp_2",
-				"cloud-provider": "gcp",
-				"cloud-id": "gcp_2",
-				"cloud-zone-id": "us-central1",
-				"gcp-project": "dbeavergcp",
-				"gcp-resource": "dbeavergcp",
-				"gcp-node-id": "dbeavergcp"
+				"$configuration": "aws",
+				"cloud-provider": "aws",
+				"cloud-id": "aws",
+				"cloud-zone-id": "us-west-2",
+				"aws-resource": "arn:aws:athena:us-west-2"
 			},
-			"name": "Google BigQuery - dbeavergcp",
+			"name": "Athena - us-west-2 (859245062624)",
 			"save-password": true,
+			"virtual-model-id": "arn:aws:athena:us-west-2",
 			"configuration": {
-				"database": "dbeavergcp",
+				"port": "444",
+				"server": "us-west-2",
+				"database": "s3://aws-athena-query-results-859245062624-us-west-2",
 				"configurationType": "MANUAL",
 				"type": "dev",
 				"closeIdleConnection": true,
-				"auth-model": "gcp_cloud_iam_bigquery"
+				"auth-model": "iam_simple"
 			}
 		}
 	},
@@ -254,15 +253,38 @@
 			"cloudId": "gcp",
 			"cloudName": "GCP configuration"
 		},
-		"gcp_2": {
+		"aws": {
+			"defaultRegions": [
+				"us-east-1",
+				"us-east-2",
+				"us-west-1",
+				"us-west-2",
+				"ca-central-1",
+				"ca-west-1",
+				"il-central-1",
+				"sa-east-1"
+			],
+			"enabledServices": [
+				"rds",
+				"redshift",
+				"athena",
+				"dynamodb",
+				"documentdb",
+				"keyspaces"
+			],
+			"govRegionsEnabled": false,
+			"isoRegionsEnabled": false,
+			"s3Disabled": false,
+			"autoRegistrationEnabled": false,
+			"federatedAccessEnabled": false,
 			"credentials": {
-				"authType": "SERVICE_ACCOUNT",
-				"serviceAccountConfigPath": "/Users/zachantunes/Downloads/dbeavertest.json",
-				"projectId": "dbeavergcp",
-				"ssoOverCli": false
+				"defaultAwsCredentials": false,
+				"sessionCredentials": false,
+				"ssoOverCli": false,
+				"crossAccountAccess": false
 			},
-			"cloudId": "gcp_2",
-			"cloudName": "GCP JSON connection"
+			"cloudId": "aws",
+			"cloudName": "AWS configuration"
 		}
 	}
 }

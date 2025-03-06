@@ -177,7 +177,7 @@
 				"auth-model": "snowflake_snowflake"
 			}
 		},
-		"google_bigquery_jdbc_simba_pro-19539294c1a-74d81d5651f2a466": {
+		"google_bigquery_jdbc_simba_pro-19567943afb-79b0b08838e7b8ca": {
 			"provider": "bigquery.ee",
 			"driver": "google_bigquery_jdbc_simba_pro",
 			"origin": {
@@ -186,73 +186,22 @@
 				"cloud-provider": "gcp",
 				"cloud-id": "gcp",
 				"cloud-zone-id": "us-central1",
-				"gcp-project": "supple-cabinet-437219-m3",
-				"gcp-resource": "supple-cabinet-437219-m3",
-				"gcp-node-id": "supple-cabinet-437219-m3"
+				"gcp-project": "cloud-sql-chinook",
+				"gcp-resource": "cloud-sql-chinook",
+				"gcp-node-id": "cloud-sql-chinook"
 			},
-			"name": "Google BigQuery - supple-cabinet-437219-m3",
+			"name": "Google BigQuery - cloud-sql-chinook",
 			"save-password": true,
+			"virtual-model-id": "bigquery_cloud-sql-chinook",
 			"configuration": {
-				"database": "supple-cabinet-437219-m3",
-				"configurationType": "MANUAL",
-				"type": "dev",
-				"closeIdleConnection": true,
-				"auth-model": "gcp_cloud_iam_bigquery"
-			},
-			"extensions": {
-				"dashboards": "\u003cdashboardList\u003e\u003cdashboards id\u003d\"default\" name\u003d\"Default\"\u003e\u003cview openConnectionOnActivate\u003d\"true\"/\u003e\u003c/dashboards\u003e\u003c/dashboardList\u003e"
-			}
-		},
-		"google_bigquery_jdbc_simba_pro-19539427e3a-1b5e9d65ab166848": {
-			"provider": "bigquery.ee",
-			"driver": "google_bigquery_jdbc_simba_pro",
-			"origin": {
-				"$type": "cloud",
-				"$configuration": "gcp_2",
-				"cloud-provider": "gcp",
-				"cloud-id": "gcp_2",
-				"cloud-zone-id": "us-central1",
-				"gcp-project": "dbeavergcp",
-				"gcp-resource": "dbeavergcp",
-				"gcp-node-id": "dbeavergcp"
-			},
-			"name": "Google BigQuery - dbeavergcp",
-			"save-password": true,
-			"configuration": {
-				"database": "dbeavergcp",
+				"database": "cloud-sql-chinook",
 				"configurationType": "MANUAL",
 				"type": "dev",
 				"closeIdleConnection": true,
 				"auth-model": "gcp_cloud_iam_bigquery"
 			}
 		},
-		"dynamodb-1954e9f216f-3d1f2c8748e20ab1": {
-			"provider": "dynamodb",
-			"driver": "dynamodb",
-			"origin": {
-				"$type": "cloud",
-				"$configuration": "aws",
-				"cloud-provider": "aws",
-				"cloud-id": "aws",
-				"cloud-zone-id": "us-east-1",
-				"aws-resource": "dynamodb.us-east-1.amazonaws.com"
-			},
-			"name": "DynamoDB - us-east-1 (859245062624)",
-			"save-password": true,
-			"virtual-model-id": "dynamodb.us-east-1.amazonaws.com",
-			"configuration": {
-				"host": "dynamodb.us-east-1.amazonaws.com",
-				"database": "dynamodb.us-east-1.amazonaws.com",
-				"configurationType": "MANUAL",
-				"type": "dev",
-				"closeIdleConnection": true,
-				"provider-properties": {
-					"regionName": "us-east-1"
-				},
-				"auth-model": "iam_simple"
-			}
-		},
-		"aws_athena_jdbc_simba-1954e9f30ff-1191a86ccd761cf1": {
+		"aws_athena_jdbc_simba-1956794c37f-31f215f5407092fa": {
 			"provider": "athena",
 			"driver": "aws_athena_jdbc_simba",
 			"origin": {
@@ -260,43 +209,20 @@
 				"$configuration": "aws",
 				"cloud-provider": "aws",
 				"cloud-id": "aws",
-				"cloud-zone-id": "us-east-1",
-				"aws-resource": "arn:aws:athena:us-east-1"
+				"cloud-zone-id": "us-west-2",
+				"aws-resource": "arn:aws:athena:us-west-2"
 			},
-			"name": "Athena - us-east-1 (859245062624)",
+			"name": "Athena - us-west-2 (859245062624)",
 			"save-password": true,
-			"virtual-model-id": "arn:aws:athena:us-east-1",
+			"virtual-model-id": "arn:aws:athena:us-west-2",
 			"configuration": {
 				"port": "444",
-				"server": "us-east-1",
-				"database": "s3://aws-athena-query-results-859245062624-us-east-1",
+				"server": "us-west-2",
+				"database": "s3://aws-athena-query-results-859245062624-us-west-2",
 				"configurationType": "MANUAL",
 				"type": "dev",
 				"closeIdleConnection": true,
 				"auth-model": "iam_simple"
-			}
-		},
-		"keyspaces-1954e9f3f7e-3729a5faa87bd8d5": {
-			"provider": "aws_keyspaces",
-			"driver": "keyspaces",
-			"origin": {
-				"$type": "cloud",
-				"$configuration": "aws",
-				"cloud-provider": "aws",
-				"cloud-id": "aws",
-				"cloud-zone-id": "us-east-1",
-				"aws-resource": "arn:aws:keyspaces:us-east-1"
-			},
-			"name": "Keyspaces - us-east-1",
-			"save-password": true,
-			"virtual-model-id": "arn:aws:keyspaces:us-east-1",
-			"configuration": {
-				"host": "us-east-1",
-				"port": "9142",
-				"configurationType": "MANUAL",
-				"type": "dev",
-				"closeIdleConnection": true,
-				"auth-model": "iam_keyspaces"
 			}
 		}
 	},
@@ -327,19 +253,16 @@
 			"cloudId": "gcp",
 			"cloudName": "GCP configuration"
 		},
-		"gcp_2": {
-			"credentials": {
-				"authType": "SERVICE_ACCOUNT",
-				"serviceAccountConfigPath": "/Users/zachantunes/Downloads/dbeavertest.json",
-				"projectId": "dbeavergcp",
-				"ssoOverCli": false
-			},
-			"cloudId": "gcp_2",
-			"cloudName": "GCP JSON connection"
-		},
 		"aws": {
 			"defaultRegions": [
-				"us-east-1"
+				"us-east-1",
+				"us-east-2",
+				"us-west-1",
+				"us-west-2",
+				"ca-central-1",
+				"ca-west-1",
+				"il-central-1",
+				"sa-east-1"
 			],
 			"enabledServices": [
 				"rds",

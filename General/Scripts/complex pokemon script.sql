@@ -1,4 +1,4 @@
--- 1. CTE: Calculate the average stats for each type
+-- 1. CTE: Calculate the average stats for each type; Aggregations
 WITH TypeAverages AS (
     SELECT 
         type1,
@@ -12,7 +12,7 @@ WITH TypeAverages AS (
     GROUP BY type1
 ),
 
--- 2. Rank Pokémon within their type by total stats
+-- 2. Rank Pokémon within their type by total stats, Window Functions
 RankedPokemon AS (
     SELECT 
         id, 
@@ -25,7 +25,7 @@ RankedPokemon AS (
     FROM pokemon
 )
 
--- 3. Main Query: Fetch detailed Pokémon stats with rankings and classifications
+-- 3. Main Query: Fetch detailed Pokémon stats with rankings and classifications, Case Statements
 SELECT 
     p.id,
     p.name,
