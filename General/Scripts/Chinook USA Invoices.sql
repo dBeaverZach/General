@@ -1,1 +1,0 @@
-SELECT * from Chinook.Invoice i where BillingCountry = 'USA';
