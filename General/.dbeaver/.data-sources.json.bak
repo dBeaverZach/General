@@ -200,53 +200,6 @@
 				"auth-model": "gcp_cloud_iam_bigquery"
 			}
 		},
-		"aws_athena_jdbc_simba-1956794c37f-31f215f5407092fa": {
-			"provider": "athena",
-			"driver": "aws_athena_jdbc_simba",
-			"origin": {
-				"$type": "cloud",
-				"$configuration": "aws",
-				"cloud-provider": "aws",
-				"cloud-id": "aws",
-				"cloud-zone-id": "us-west-2",
-				"aws-resource": "arn:aws:athena:us-west-2"
-			},
-			"name": "Athena - us-west-2 (859245062624)",
-			"save-password": true,
-			"configuration": {
-				"port": "444",
-				"server": "us-west-2",
-				"database": "s3://aws-athena-query-results-859245062624-us-west-2",
-				"configurationType": "MANUAL",
-				"type": "dev",
-				"closeIdleConnection": true,
-				"auth-model": "iam_simple"
-			}
-		},
-		"aws_athena_jdbc_simba-195af7d5319-2e308ffab3a0e06e": {
-			"provider": "athena",
-			"driver": "aws_athena_jdbc_simba",
-			"origin": {
-				"$type": "cloud",
-				"$configuration": "aws",
-				"cloud-provider": "aws",
-				"cloud-id": "aws",
-				"cloud-zone-id": "us-east-1",
-				"aws-resource": "arn:aws:athena:us-east-1"
-			},
-			"name": "Athena - us-east-1 (859245062624)",
-			"save-password": true,
-			"virtual-model-id": "arn:aws:athena:us-east-1",
-			"configuration": {
-				"port": "444",
-				"server": "us-east-1",
-				"database": "s3://aws-athena-query-results-859245062624-us-east-1",
-				"configurationType": "MANUAL",
-				"type": "dev",
-				"closeIdleConnection": true,
-				"auth-model": "iam_simple"
-			}
-		},
 		"salesforce_jdbc-195af8a9c2b-58c499c7f192f8aa": {
 			"provider": "salesforce",
 			"driver": "salesforce_jdbc",
@@ -259,30 +212,6 @@
 				"type": "dev",
 				"closeIdleConnection": true,
 				"auth-model": "salesforce"
-			}
-		},
-		"aws_athena_jdbc_simba-195afa11bac-6e0ba78930cd0959": {
-			"provider": "athena",
-			"driver": "aws_athena_jdbc_simba",
-			"origin": {
-				"$type": "cloud",
-				"$configuration": "aws",
-				"cloud-provider": "aws",
-				"cloud-id": "aws",
-				"cloud-zone-id": "us-east-2",
-				"aws-resource": "arn:aws:athena:us-east-2"
-			},
-			"name": "Athena - us-east-2 (859245062624)",
-			"save-password": true,
-			"virtual-model-id": "arn:aws:athena:us-east-2",
-			"configuration": {
-				"port": "444",
-				"server": "us-east-2",
-				"database": "s3://aws-athena-query-results-859245062624-us-east-2",
-				"configurationType": "MANUAL",
-				"type": "dev",
-				"closeIdleConnection": true,
-				"auth-model": "iam_simple"
 			}
 		}
 	},
@@ -312,39 +241,6 @@
 			},
 			"cloudId": "gcp",
 			"cloudName": "GCP configuration"
-		},
-		"aws": {
-			"defaultRegions": [
-				"us-east-1",
-				"us-east-2",
-				"us-west-1",
-				"us-west-2",
-				"ca-central-1",
-				"ca-west-1",
-				"il-central-1",
-				"sa-east-1"
-			],
-			"enabledServices": [
-				"rds",
-				"redshift",
-				"athena",
-				"dynamodb",
-				"documentdb",
-				"keyspaces"
-			],
-			"govRegionsEnabled": false,
-			"isoRegionsEnabled": false,
-			"s3Disabled": false,
-			"autoRegistrationEnabled": false,
-			"federatedAccessEnabled": false,
-			"credentials": {
-				"defaultAwsCredentials": false,
-				"sessionCredentials": false,
-				"ssoOverCli": false,
-				"crossAccountAccess": false
-			},
-			"cloudId": "aws",
-			"cloudName": "AWS configuration"
 		}
 	}
 }

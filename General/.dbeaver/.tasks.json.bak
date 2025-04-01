@@ -96,6 +96,81 @@
 				}
 			],
 			"configuration": {
+				"maxJobCount": 1.0,
+				"showFinalMessage": true,
+				"DatabaseTransferProducer": {
+					"extractType": "SINGLE_QUERY",
+					"segmentSize": 100000.0,
+					"fetchSize": 10000.0,
+					"openNewConnections": false,
+					"queryRowCount": false,
+					"selectedColumnsOnly": false,
+					"selectedRowsOnly": false
+				},
+				"StreamTransferConsumer": {
+					"lobExtractType": "INLINE",
+					"lobEncoding": "BINARY",
+					"dataFileConflictBehavior": "ASK",
+					"blobFileConflictBehavior": "ASK",
+					"outputFolder": "/Users/zachantunes/Downloads",
+					"outputFilePattern": "${table}_${timestamp}",
+					"outputEncoding": "UTF-8",
+					"outputTimestampPattern": "yyyyMMddHHmm",
+					"outputEncodingBOM": false,
+					"outputClipboard": false,
+					"useSingleFile": false,
+					"compressResults": false,
+					"splitOutFiles": false,
+					"maxOutFileSize": 1.0E7,
+					"formatterProfile": "",
+					"valueFormat": "UI"
+				},
+				"producer": "database_producer",
+				"consumer": "stream_consumer",
+				"processor": "stream.csv",
+				"processors": {
+					"stream_consumer:stream.csv": {
+						"@propNames": "quoteChar,rowDelimiter,extension,headerFormat,delimiter,header,formatArray,formatNumbers,quoteAlways,headerCase,quoteNever,escape,",
+						"quoteChar": "\"",
+						"rowDelimiter": "default",
+						"extension": "csv",
+						"headerFormat": "label",
+						"delimiter": ",",
+						"header": "top",
+						"formatArray": "{ }",
+						"formatNumbers": "false",
+						"quoteAlways": "disabled",
+						"headerCase": "as is",
+						"quoteNever": "false",
+						"escape": "quotes"
+					}
+				}
+			}
+		}
+	},
+	"3c737413-dcf5-4969-bb88-151e0371a07e": {
+		"task": "dataExport",
+		"label": "Pokemon Export 3",
+		"description": "",
+		"createTime": "202503191117",
+		"updateTime": "202503191117",
+		"state": {
+			"producers": [
+				{
+					"type": "databaseTransferProducer",
+					"location": {
+						"type": "entity",
+						"project": "General",
+						"entityId": "microsoft-1951fa13860-455f53789aeaa567/master/dbo/pokemon"
+					}
+				}
+			],
+			"consumers": [
+				{
+					"type": "streamTransferConsumer"
+				}
+			],
+			"configuration": {
 				"maxJobCount": 1,
 				"showFinalMessage": true,
 				"DatabaseTransferProducer": {
@@ -131,14 +206,13 @@
 				"processor": "stream.csv",
 				"processors": {
 					"stream_consumer:stream.csv": {
-						"@propNames": "quoteChar,rowDelimiter,extension,headerFormat,delimiter,header,formatArray,formatNumbers,quoteAlways,headerCase,quoteNever,escape,",
+						"@propNames": "quoteChar,rowDelimiter,extension,headerFormat,delimiter,header,formatNumbers,quoteAlways,headerCase,quoteNever,escape,",
 						"quoteChar": "\"",
 						"rowDelimiter": "default",
 						"extension": "csv",
 						"headerFormat": "label",
 						"delimiter": ",",
 						"header": "top",
-						"formatArray": "{ }",
 						"formatNumbers": "false",
 						"quoteAlways": "disabled",
 						"headerCase": "as is",
