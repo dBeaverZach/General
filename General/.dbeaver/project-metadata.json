@@ -1,1 +1,1 @@
-{"resources":{"Scripts/Script.sql":{"default-datasource":"cql-1951fa287a9-420d85ccffe2747","default-catalog":"mflix"},"Scripts/mongodb movies greater than 9.sql":{"default-datasource":"cql-1951fa287a9-420d85ccffe2747","default-catalog":"mflix"}}}
+{"resources":{"Scripts/mongodb movies greater than 9.sql":{"default-datasource":"cql-1951fa287a9-420d85ccffe2747","default-catalog":"mflix"}}}

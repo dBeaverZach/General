@@ -163,11 +163,11 @@
 			"navigator-hide-folders": true,
 			"navigator-hide-virtual": true,
 			"configuration": {
-				"host": "https://un22481.eu-central-1.snowflakecomputing.com",
+				"host": "https://ce77640.eu-central-1.snowflakecomputing.com",
 				"port": "443",
 				"server": "dbeaver",
 				"database": "SNOWFLAKE_SAMPLE_DATA",
-				"url": "jdbc:snowflake://https://un22481.eu-central-1.snowflakecomputing.com:443/?db\u003dSNOWFLAKE_SAMPLE_DATA\u0026warehouse\u003ddbeaver",
+				"url": "jdbc:snowflake://https://ce77640.eu-central-1.snowflakecomputing.com:443/?db\u003dSNOWFLAKE_SAMPLE_DATA\u0026warehouse\u003ddbeaver",
 				"configurationType": "MANUAL",
 				"type": "dev",
 				"closeIdleConnection": true,
@@ -212,6 +212,22 @@
 				"type": "dev",
 				"closeIdleConnection": true,
 				"auth-model": "salesforce"
+			}
+		},
+		"csv-19612719cac-25e8ddf38a02fc96": {
+			"provider": "jdbc-files-ee",
+			"driver": "csv",
+			"name": "IT_Software_Inventory_202504010921.csv",
+			"save-password": true,
+			"navigator-show-only-entities": true,
+			"navigator-hide-folders": true,
+			"navigator-hide-virtual": true,
+			"configuration": {
+				"database": "/Users/zachantunes/Downloads/pokemon_202502281317.csv;/Users/zachantunes/Downloads/IT_Software_Inventory_202504010921.csv",
+				"url": "jdbc:dbeaver:file:csv:/Users/zachantunes/Downloads/pokemon_202502281317.csv;/Users/zachantunes/Downloads/IT_Software_Inventory_202504010921.csv",
+				"configurationType": "MANUAL",
+				"type": "dev",
+				"closeIdleConnection": true
 			}
 		}
 	},

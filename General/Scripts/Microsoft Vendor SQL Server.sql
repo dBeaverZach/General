@@ -1,0 +1,1 @@
+select * from IT_Software_Inventory isi where [Vendor Name] = 'Microsoft';
