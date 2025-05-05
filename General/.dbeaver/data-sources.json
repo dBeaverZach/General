@@ -43,29 +43,6 @@
 				"dashboards": "\u003cdashboardList\u003e\u003cdashboards id\u003d\"default\" name\u003d\"Default\"\u003e\u003cview/\u003e\u003cdashboard id\u003d\"database:postgresql.sessionCount\" viewType\u003d\"timeseries\" index\u003d\"0\" widthRatio\u003d\"1.5\" updatePeriod\u003d\"2000\" maxItems\u003d\"300\" maxAge\u003d\"1800000\" legendVisible\u003d\"true\" gridVisible\u003d\"true\" domainTicksVisible\u003d\"true\" rangeTicksVisible\u003d\"true\" description\u003d\"Shows active/idle server sessions\"/\u003e\u003cdashboard id\u003d\"database:postgresql.transactionCount\" viewType\u003d\"timeseries\" index\u003d\"1\" widthRatio\u003d\"1.5\" updatePeriod\u003d\"2000\" maxItems\u003d\"300\" maxAge\u003d\"1800000\" legendVisible\u003d\"true\" gridVisible\u003d\"true\" domainTicksVisible\u003d\"true\" rangeTicksVisible\u003d\"true\" description\u003d\"Shows commit/rollback transactions per second\"/\u003e\u003cdashboard id\u003d\"database:postgresql.blockIO\" viewType\u003d\"timeseries\" index\u003d\"2\" widthRatio\u003d\"1.5\" updatePeriod\u003d\"2000\" maxItems\u003d\"300\" maxAge\u003d\"1800000\" legendVisible\u003d\"true\" gridVisible\u003d\"true\" domainTicksVisible\u003d\"true\" rangeTicksVisible\u003d\"true\" description\u003d\"Shows blocking IO operations per second\"/\u003e\u003c/dashboards\u003e\u003c/dashboardList\u003e"
 			}
 		},
-		"microsoft-1951fa13860-455f53789aeaa567": {
-			"provider": "sqlserver-ee",
-			"driver": "microsoft",
-			"name": "SQL server",
-			"save-password": true,
-			"navigator-show-only-entities": true,
-			"navigator-hide-folders": true,
-			"navigator-hide-virtual": true,
-			"configuration": {
-				"host": "localhost",
-				"port": "1433",
-				"database": "master",
-				"url": "jdbc:sqlserver://;serverName\u003dlocalhost;databaseName\u003dmaster",
-				"configurationType": "MANUAL",
-				"type": "dev",
-				"closeIdleConnection": true,
-				"provider-properties": {
-					"@dbeaver-show-all-schemas@": "false",
-					"sslTrustServerCertificate": "false"
-				},
-				"auth-model": "sqlserver_database"
-			}
-		},
 		"mysql8-1951fa1ed50-13a009561121434d": {
 			"provider": "mysql-ee",
 			"driver": "mysql8",
@@ -94,9 +71,7 @@
 			"driver": "cql",
 			"name": "MongoDB",
 			"save-password": true,
-			"navigator-show-only-entities": true,
-			"navigator-hide-folders": true,
-			"navigator-hide-virtual": true,
+			"show-system-objects": true,
 			"configuration": {
 				"host": "localhost",
 				"port": "27017",
@@ -203,7 +178,7 @@
 		"salesforce_jdbc-195af8a9c2b-58c499c7f192f8aa": {
 			"provider": "salesforce",
 			"driver": "salesforce_jdbc",
-			"name": "dbeaverlabs-dev-ed.develop.my.salesforce.com",
+			"name": "Salesforce",
 			"save-password": true,
 			"configuration": {
 				"host": "dbeaverlabs-dev-ed.develop.my.salesforce.com",
@@ -229,9 +204,115 @@
 				"type": "dev",
 				"closeIdleConnection": true
 			}
+		},
+		"azure-ee-1965fa16122-4458d7bacdb1b7b2": {
+			"provider": "sqlserver-ee",
+			"driver": "azure-ee",
+			"origin": {
+				"$type": "cloud",
+				"$configuration": "azure",
+				"cloud-provider": "azure",
+				"cloud-id": "azure",
+				"cloud-zone-id": "swedencentral",
+				"azure-resource": "/subscriptions/ea6bbfd0-71c4-47ef-a0ba-164defd3a176/resourceGroups/res-group1/providers/Microsoft.Sql/servers/dbeaver"
+			},
+			"name": "Azure SQL Server - dbeaver",
+			"save-password": true,
+			"configuration": {
+				"host": "dbeaver.database.windows.net",
+				"port": "1433",
+				"configurationType": "MANUAL",
+				"type": "dev",
+				"closeIdleConnection": true,
+				"auth-model": "azure_ad_sqlserver"
+			}
+		},
+		"aws_athena_jdbc_simba-1965fa21ed6-3d658d9d88898732": {
+			"provider": "athena",
+			"driver": "aws_athena_jdbc_simba",
+			"origin": {
+				"$type": "cloud",
+				"$configuration": "aws",
+				"cloud-provider": "aws",
+				"cloud-id": "aws",
+				"cloud-zone-id": "us-east-1",
+				"aws-resource": "arn:aws:athena:us-east-1"
+			},
+			"name": "Athena - us-east-1 (859245062624)",
+			"save-password": true,
+			"configuration": {
+				"port": "444",
+				"server": "us-east-1",
+				"database": "s3://aws-athena-query-results-859245062624-us-east-1",
+				"configurationType": "MANUAL",
+				"type": "dev",
+				"closeIdleConnection": true,
+				"auth-model": "iam_simple"
+			}
+		},
+		"trino_jdbc-19664a8fd7e-663159b637c08149": {
+			"provider": "generic",
+			"driver": "trino_jdbc",
+			"name": "Trino",
+			"save-password": true,
+			"configuration": {
+				"host": "localhost",
+				"port": "8080",
+				"url": "jdbc:trino://localhost:8080",
+				"configurationType": "MANUAL",
+				"type": "dev",
+				"closeIdleConnection": true,
+				"auth-model": "native"
+			}
+		},
+		"microsoft-1966dee8cbc-2130a955d9aecae5": {
+			"provider": "sqlserver-ee",
+			"driver": "microsoft",
+			"name": "SQL Server",
+			"save-password": true,
+			"navigator-show-only-entities": true,
+			"navigator-hide-folders": true,
+			"navigator-hide-virtual": true,
+			"configuration": {
+				"host": "localhost",
+				"port": "1433",
+				"database": "master",
+				"url": "jdbc:sqlserver://;serverName\u003dlocalhost;databaseName\u003dmaster",
+				"configurationType": "MANUAL",
+				"type": "dev",
+				"closeIdleConnection": true,
+				"provider-properties": {
+					"@dbeaver-show-all-schemas@": "false",
+					"sslTrustServerCertificate": "false"
+				},
+				"auth-model": "sqlserver_database"
+			}
+		},
+		"oracle_thin-1968cf0d0c1-2a6d3dd1e7d77e7": {
+			"provider": "oracle-ee",
+			"driver": "oracle_thin",
+			"name": "FREEPDB1",
+			"save-password": true,
+			"navigator-show-only-entities": true,
+			"navigator-hide-folders": true,
+			"navigator-hide-virtual": true,
+			"configuration": {
+				"host": "db9.dev.dbeaver.infra",
+				"port": "1524",
+				"database": "FREEPDB1",
+				"url": "jdbc:oracle:thin:@//db9.dev.dbeaver.infra:1524/FREEPDB1",
+				"configurationType": "MANUAL",
+				"type": "dev",
+				"closeIdleConnection": true,
+				"provider-properties": {
+					"@dbeaver-connection-type@": "BASIC",
+					"@dbeaver-sid-service@": "SERVICE"
+				},
+				"auth-model": "oracle_native"
+			}
 		}
 	},
-	"virtual-models": {"microsoft-1951fa13860-455f53789aeaa567":{"master":{"dbo":{":pokemon":{"colors":[{"name":"type1","operator":"EQUALS","background":"192,73,90","values":["fire"]}]}}}},"mysql8-1951fa1ed50-13a009561121434d":{"Chinook":{":InvoiceLine":{"constraints":{"InvoiceLine_VK":{"type":"vpk","attributes":["InvoiceId"]}}},":Track":{"properties":{"erd.diagram.state":{"serialized":"\u003cdiagram version\u003d\"1\" name\u003d\"empty\" time\u003d\"202502261126\"\u003e\u003centities\u003e\u003cdata-source id\u003d\"mysql8-1951fa1ed50-13a009561121434d\"\u003e\u003centity id\u003d\"1\" name\u003d\"Track\" fq-name\u003d\"Chinook.Track\" order\u003d\"0\" color-bg\u003d\"128,64,32\" x\u003d\"241\" y\u003d\"44\"\u003e\u003cpath name\u003d\"Chinook\"/\u003e\u003c/entity\u003e\u003centity id\u003d\"2\" name\u003d\"Album\" fq-name\u003d\"Chinook.Album\" order\u003d\"1\" x\u003d\"455\" y\u003d\"40\"\u003e\u003cpath name\u003d\"Chinook\"/\u003e\u003c/entity\u003e\u003centity id\u003d\"3\" name\u003d\"Genre\" fq-name\u003d\"Chinook.Genre\" order\u003d\"2\" x\u003d\"455\" y\u003d\"204\"\u003e\u003cpath name\u003d\"Chinook\"/\u003e\u003c/entity\u003e\u003centity id\u003d\"4\" name\u003d\"MediaType\" fq-name\u003d\"Chinook.MediaType\" order\u003d\"3\" x\u003d\"455\" y\u003d\"348\"\u003e\u003cpath name\u003d\"Chinook\"/\u003e\u003c/entity\u003e\u003centity id\u003d\"5\" name\u003d\"InvoiceLine\" fq-name\u003d\"Chinook.InvoiceLine\" order\u003d\"4\" x\u003d\"40\" y\u003d\"87\"\u003e\u003cpath name\u003d\"Chinook\"/\u003e\u003c/entity\u003e\u003centity id\u003d\"6\" name\u003d\"PlaylistTrack\" fq-name\u003d\"Chinook.PlaylistTrack\" order\u003d\"5\" x\u003d\"40\" y\u003d\"291\"\u003e\u003cpath name\u003d\"Chinook\"/\u003e\u003c/entity\u003e\u003c/data-source\u003e\u003c/entities\u003e\u003crelations\u003e\u003crelation name\u003d\"FK_InvoiceLineTrackId\" fq-name\u003d\"Chinook.InvoiceLine.FK_InvoiceLineTrackId\" type\u003d\"fk\" pk-ref\u003d\"1\" fk-ref\u003d\"5\"/\u003e\u003crelation name\u003d\"FK_PlaylistTrackTrackId\" fq-name\u003d\"Chinook.PlaylistTrack.FK_PlaylistTrackTrackId\" type\u003d\"fk\" pk-ref\u003d\"1\" fk-ref\u003d\"6\"/\u003e\u003crelation name\u003d\"FK_TrackAlbumId\" fq-name\u003d\"Chinook.Track.FK_TrackAlbumId\" type\u003d\"fk\" pk-ref\u003d\"2\" fk-ref\u003d\"1\"/\u003e\u003crelation name\u003d\"FK_TrackGenreId\" fq-name\u003d\"Chinook.Track.FK_TrackGenreId\" type\u003d\"fk\" pk-ref\u003d\"3\" fk-ref\u003d\"1\"/\u003e\u003crelation name\u003d\"FK_TrackMediaTypeId\" fq-name\u003d\"Chinook.Track.FK_TrackMediaTypeId\" type\u003d\"fk\" pk-ref\u003d\"4\" fk-ref\u003d\"1\"/\u003e\u003c/relations\u003e\u003c/diagram\u003e"}},"constraints":{"Track_VK":{"type":"vpk","attributes":["GenreId"]}}}}}},
+	"virtual-models": {"mysql8-1951fa1ed50-13a009561121434d":{"Chinook":{":InvoiceLine":{"constraints":{"InvoiceLine_VK":{"type":"vpk","attributes":["InvoiceId"]}}},":Track":{"properties":{"erd.diagram.state":{"serialized":"\u003cdiagram version\u003d\"1\" name\u003d\"empty\" time\u003d\"202502261126\"\u003e\u003centities\u003e\u003cdata-source id\u003d\"mysql8-1951fa1ed50-13a009561121434d\"\u003e\u003centity id\u003d\"1\" name\u003d\"Track\" fq-name\u003d\"Chinook.Track\" order\u003d\"0\" color-bg\u003d\"128,64,32\" x\u003d\"241\" y\u003d\"44\"\u003e\u003cpath name\u003d\"Chinook\"/\u003e\u003c/entity\u003e\u003centity id\u003d\"2\" name\u003d\"Album\" fq-name\u003d\"Chinook.Album\" order\u003d\"1\" x\u003d\"455\" y\u003d\"40\"\u003e\u003cpath name\u003d\"Chinook\"/\u003e\u003c/entity\u003e\u003centity id\u003d\"3\" name\u003d\"Genre\" fq-name\u003d\"Chinook.Genre\" order\u003d\"2\" x\u003d\"455\" y\u003d\"204\"\u003e\u003cpath name\u003d\"Chinook\"/\u003e\u003c/entity\u003e\u003centity id\u003d\"4\" name\u003d\"MediaType\" fq-name\u003d\"Chinook.MediaType\" order\u003d\"3\" x\u003d\"455\" y\u003d\"348\"\u003e\u003cpath name\u003d\"Chinook\"/\u003e\u003c/entity\u003e\u003centity id\u003d\"5\" name\u003d\"InvoiceLine\" fq-name\u003d\"Chinook.InvoiceLine\" order\u003d\"4\" x\u003d\"40\" y\u003d\"87\"\u003e\u003cpath name\u003d\"Chinook\"/\u003e\u003c/entity\u003e\u003centity id\u003d\"6\" name\u003d\"PlaylistTrack\" fq-name\u003d\"Chinook.PlaylistTrack\" order\u003d\"5\" x\u003d\"40\" y\u003d\"291\"\u003e\u003cpath name\u003d\"Chinook\"/\u003e\u003c/entity\u003e\u003c/data-source\u003e\u003c/entities\u003e\u003crelations\u003e\u003crelation name\u003d\"FK_InvoiceLineTrackId\" fq-name\u003d\"Chinook.InvoiceLine.FK_InvoiceLineTrackId\" type\u003d\"fk\" pk-ref\u003d\"1\" fk-ref\u003d\"5\"/\u003e\u003crelation name\u003d\"FK_PlaylistTrackTrackId\" fq-name\u003d\"Chinook.PlaylistTrack.FK_PlaylistTrackTrackId\" type\u003d\"fk\" pk-ref\u003d\"1\" fk-ref\u003d\"6\"/\u003e\u003crelation name\u003d\"FK_TrackAlbumId\" fq-name\u003d\"Chinook.Track.FK_TrackAlbumId\" type\u003d\"fk\" pk-ref\u003d\"2\" fk-ref\u003d\"1\"/\u003e\u003crelation name\u003d\"FK_TrackGenreId\" fq-name\u003d\"Chinook.Track.FK_TrackGenreId\" type\u003d\"fk\" pk-ref\u003d\"3\" fk-ref\u003d\"1\"/\u003e\u003crelation name\u003d\"FK_TrackMediaTypeId\" fq-name\u003d\"Chinook.Track.FK_TrackMediaTypeId\" type\u003d\"fk\" pk-ref\u003d\"4\" fk-ref\u003d\"1\"/\u003e\u003c/relations\u003e\u003c/diagram\u003e"}},"constraints":{"Track_VK":{"type":"vpk","attributes":["GenreId"]}},"foreign-keys":[{"entity":"node://General/datasources/mysql8-1951fa1ed50-13a009561121434d/database/Chinook/table/Invoice","constraint":"Invoice_VK","attributes":{"Name":"BillingAddress"}}]},":Employee":{"foreign-keys":[{"entity":"node://General/datasources/mysql8-1951fa1ed50-13a009561121434d/database/Chinook/table/Customer","constraint":"Customer_VK","attributes":{"State":"State"}}]},":Customer":{"constraints":{"Customer_VK":{"type":"vpk","attributes":["State"]}}},":Invoice":{"constraints":{"Invoice_VK":{"type":"vpk","attributes":["BillingAddress"]}}},":IT_Software_Inventory":{"foreign-keys":[{"entity":"node://General/datasources/mysql8-1951fa1ed50-13a009561121434d/database/Chinook/table/Track","constraint":"Track_VK","attributes":{"Total Cost":"GenreId"}}]}}}},
 	"connection-types": {
 		"dev": {
 			"name": "Development",
@@ -257,6 +338,50 @@
 			},
 			"cloudId": "gcp",
 			"cloudName": "GCP configuration"
+		},
+		"azure": {
+			"credentials": {
+				"authType": "CLIENT_SECRET",
+				"clientId": "51f6d121-e855-4653-8722-60a7498d7641",
+				"clientSecret": "BT.8Q~U67f-Mlc.9dceMkp6rqL2~3i2bZMWafdos\n",
+				"tenantId": "d252d059-7ef4-4f17-8157-ba1647153298"
+			},
+			"storageAccountId": "dbeavertestsa",
+			"cloudId": "azure",
+			"cloudName": "Azure configuration"
+		},
+		"aws": {
+			"defaultRegions": [
+				"us-east-1",
+				"us-east-2",
+				"us-west-1",
+				"us-west-2",
+				"ca-central-1",
+				"ca-west-1",
+				"il-central-1",
+				"sa-east-1"
+			],
+			"enabledServices": [
+				"rds",
+				"redshift",
+				"athena",
+				"dynamodb",
+				"documentdb",
+				"keyspaces"
+			],
+			"govRegionsEnabled": false,
+			"isoRegionsEnabled": false,
+			"s3Disabled": false,
+			"autoRegistrationEnabled": false,
+			"federatedAccessEnabled": false,
+			"credentials": {
+				"defaultAwsCredentials": false,
+				"sessionCredentials": false,
+				"ssoOverCli": false,
+				"crossAccountAccess": false
+			},
+			"cloudId": "aws",
+			"cloudName": "AWS configuration"
 		}
 	}
 }

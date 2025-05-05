@@ -34,7 +34,7 @@ VendorLicenses AS (
     GROUP BY [Vendor Name]
 ),
 
--- Step 4: Flag upcoming expirations within the next 60 days
+-- Step 4: Case Statements; Flag upcoming expirations within the next 60 days
 ExpiringSoon AS (
     SELECT
         *,
