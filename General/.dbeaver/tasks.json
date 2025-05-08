@@ -86,7 +86,7 @@
 					"location": {
 						"type": "entity",
 						"project": "General",
-						"entityId": "mysql8-19572624b55-78f47156e0039219/Chinook/Customer"
+						"entityId": "mysql8-1951fa1ed50-13a009561121434d/Chinook/Customer"
 					}
 				}
 			],
@@ -96,12 +96,12 @@
 				}
 			],
 			"configuration": {
-				"maxJobCount": 1.0,
+				"maxJobCount": 1,
 				"showFinalMessage": true,
 				"DatabaseTransferProducer": {
 					"extractType": "SINGLE_QUERY",
-					"segmentSize": 100000.0,
-					"fetchSize": 10000.0,
+					"segmentSize": 100000,
+					"fetchSize": 10000,
 					"openNewConnections": false,
 					"queryRowCount": false,
 					"selectedColumnsOnly": false,
@@ -121,9 +121,10 @@
 					"useSingleFile": false,
 					"compressResults": false,
 					"splitOutFiles": false,
-					"maxOutFileSize": 1.0E7,
+					"maxOutFileSize": 10000000,
 					"formatterProfile": "",
-					"valueFormat": "UI"
+					"valueFormat": "UI",
+					"eventProcessors": {}
 				},
 				"producer": "database_producer",
 				"consumer": "stream_consumer",
