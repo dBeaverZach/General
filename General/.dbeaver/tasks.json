@@ -159,9 +159,7 @@
 				{
 					"type": "databaseTransferProducer",
 					"location": {
-						"type": "entity",
-						"project": "General",
-						"entityId": "microsoft-1951fa13860-455f53789aeaa567/master/dbo/pokemon"
+						"type": "unknown"
 					}
 				}
 			],
@@ -241,6 +239,39 @@
 			],
 			"ignoreErrors": false,
 			"allNotifications": false
+		}
+	},
+	"ca19fa9b-4833-4536-b566-8b0a19b0b0e4": {
+		"task": "schemaCompare",
+		"label": "Migrate Customer MySQL to SQL Server",
+		"description": "",
+		"createTime": "202505071759",
+		"updateTime": "202505071759",
+		"state": {
+			"project": "General",
+			"onlyChangelog": false,
+			"sourceContainerId": "mysql8-1951fa1ed50-13a009561121434d",
+			"sourceObjects": [
+				"mysql8-1951fa1ed50-13a009561121434d/Chinook/Customer"
+			],
+			"targetContainerId": "microsoft-1966dee8cbc-2130a955d9aecae5",
+			"targetObjects": [
+				"microsoft-1966dee8cbc-2130a955d9aecae5/master/dbo"
+			],
+			"doCreate": true,
+			"doDrop": true,
+			"doChange": true,
+			"quoteAllObjectsNames": true,
+			"caseInsensitiveCompare": true,
+			"exportFile": false,
+			"outputFolderPath": "/Users/zachantunes",
+			"outputFilePattern": "compare-${database}-${timestamp}.sql",
+			"reportEngineId": "",
+			"logLevel": "OFF",
+			"containersMapping": {
+				"mysql8-1951fa1ed50-13a009561121434d/Chinook": "microsoft-1966dee8cbc-2130a955d9aecae5/master/dbo"
+			},
+			"hasLiquibaseLicense": false
 		}
 	}
 }

@@ -171,12 +171,12 @@
 				}
 			],
 			"configuration": {
-				"maxJobCount": 1,
+				"maxJobCount": 1.0,
 				"showFinalMessage": true,
 				"DatabaseTransferProducer": {
 					"extractType": "SINGLE_QUERY",
-					"segmentSize": 100000,
-					"fetchSize": 10000,
+					"segmentSize": 100000.0,
+					"fetchSize": 10000.0,
 					"openNewConnections": false,
 					"queryRowCount": false,
 					"selectedColumnsOnly": false,
@@ -196,10 +196,9 @@
 					"useSingleFile": false,
 					"compressResults": false,
 					"splitOutFiles": false,
-					"maxOutFileSize": 10000000,
+					"maxOutFileSize": 1.0E7,
 					"formatterProfile": "",
-					"valueFormat": "UI",
-					"eventProcessors": {}
+					"valueFormat": "UI"
 				},
 				"producer": "database_producer",
 				"consumer": "stream_consumer",
@@ -221,6 +220,27 @@
 					}
 				}
 			}
+		}
+	},
+	"e58e6809-303e-42e6-b723-34cf51c0aca4": {
+		"task": "composite",
+		"label": "Composite Task Ex",
+		"description": "",
+		"createTime": "202503281207",
+		"updateTime": "202503281207",
+		"state": {
+			"tasks": [
+				{
+					"id": "55517877-1057-4a8a-ba0d-6836013fd120",
+					"project": "General"
+				},
+				{
+					"id": "3c737413-dcf5-4969-bb88-151e0371a07e",
+					"project": "General"
+				}
+			],
+			"ignoreErrors": false,
+			"allNotifications": false
 		}
 	}
 }

@@ -227,29 +227,6 @@
 				"auth-model": "azure_ad_sqlserver"
 			}
 		},
-		"aws_athena_jdbc_simba-1965fa21ed6-3d658d9d88898732": {
-			"provider": "athena",
-			"driver": "aws_athena_jdbc_simba",
-			"origin": {
-				"$type": "cloud",
-				"$configuration": "aws",
-				"cloud-provider": "aws",
-				"cloud-id": "aws",
-				"cloud-zone-id": "us-east-1",
-				"aws-resource": "arn:aws:athena:us-east-1"
-			},
-			"name": "Athena - us-east-1 (859245062624)",
-			"save-password": true,
-			"configuration": {
-				"port": "444",
-				"server": "us-east-1",
-				"database": "s3://aws-athena-query-results-859245062624-us-east-1",
-				"configurationType": "MANUAL",
-				"type": "dev",
-				"closeIdleConnection": true,
-				"auth-model": "iam_simple"
-			}
-		},
 		"trino_jdbc-19664a8fd7e-663159b637c08149": {
 			"provider": "generic",
 			"driver": "trino_jdbc",
@@ -287,9 +264,32 @@
 				},
 				"auth-model": "sqlserver_database"
 			}
+		},
+		"oracle_thin-1968cf0d0c1-2a6d3dd1e7d77e7": {
+			"provider": "oracle-ee",
+			"driver": "oracle_thin",
+			"name": "FREEPDB1",
+			"save-password": true,
+			"navigator-show-only-entities": true,
+			"navigator-hide-folders": true,
+			"navigator-hide-virtual": true,
+			"configuration": {
+				"host": "db9.dev.dbeaver.infra",
+				"port": "1524",
+				"database": "FREEPDB1",
+				"url": "jdbc:oracle:thin:@//db9.dev.dbeaver.infra:1524/FREEPDB1",
+				"configurationType": "MANUAL",
+				"type": "dev",
+				"closeIdleConnection": true,
+				"provider-properties": {
+					"@dbeaver-connection-type@": "BASIC",
+					"@dbeaver-sid-service@": "SERVICE"
+				},
+				"auth-model": "oracle_native"
+			}
 		}
 	},
-	"virtual-models": {"mysql8-1951fa1ed50-13a009561121434d":{"Chinook":{":InvoiceLine":{"constraints":{"InvoiceLine_VK":{"type":"vpk","attributes":["InvoiceId"]}}},":Track":{"properties":{"erd.diagram.state":{"serialized":"\u003cdiagram version\u003d\"1\" name\u003d\"empty\" time\u003d\"202502261126\"\u003e\u003centities\u003e\u003cdata-source id\u003d\"mysql8-1951fa1ed50-13a009561121434d\"\u003e\u003centity id\u003d\"1\" name\u003d\"Track\" fq-name\u003d\"Chinook.Track\" order\u003d\"0\" color-bg\u003d\"128,64,32\" x\u003d\"241\" y\u003d\"44\"\u003e\u003cpath name\u003d\"Chinook\"/\u003e\u003c/entity\u003e\u003centity id\u003d\"2\" name\u003d\"Album\" fq-name\u003d\"Chinook.Album\" order\u003d\"1\" x\u003d\"455\" y\u003d\"40\"\u003e\u003cpath name\u003d\"Chinook\"/\u003e\u003c/entity\u003e\u003centity id\u003d\"3\" name\u003d\"Genre\" fq-name\u003d\"Chinook.Genre\" order\u003d\"2\" x\u003d\"455\" y\u003d\"204\"\u003e\u003cpath name\u003d\"Chinook\"/\u003e\u003c/entity\u003e\u003centity id\u003d\"4\" name\u003d\"MediaType\" fq-name\u003d\"Chinook.MediaType\" order\u003d\"3\" x\u003d\"455\" y\u003d\"348\"\u003e\u003cpath name\u003d\"Chinook\"/\u003e\u003c/entity\u003e\u003centity id\u003d\"5\" name\u003d\"InvoiceLine\" fq-name\u003d\"Chinook.InvoiceLine\" order\u003d\"4\" x\u003d\"40\" y\u003d\"87\"\u003e\u003cpath name\u003d\"Chinook\"/\u003e\u003c/entity\u003e\u003centity id\u003d\"6\" name\u003d\"PlaylistTrack\" fq-name\u003d\"Chinook.PlaylistTrack\" order\u003d\"5\" x\u003d\"40\" y\u003d\"291\"\u003e\u003cpath name\u003d\"Chinook\"/\u003e\u003c/entity\u003e\u003c/data-source\u003e\u003c/entities\u003e\u003crelations\u003e\u003crelation name\u003d\"FK_InvoiceLineTrackId\" fq-name\u003d\"Chinook.InvoiceLine.FK_InvoiceLineTrackId\" type\u003d\"fk\" pk-ref\u003d\"1\" fk-ref\u003d\"5\"/\u003e\u003crelation name\u003d\"FK_PlaylistTrackTrackId\" fq-name\u003d\"Chinook.PlaylistTrack.FK_PlaylistTrackTrackId\" type\u003d\"fk\" pk-ref\u003d\"1\" fk-ref\u003d\"6\"/\u003e\u003crelation name\u003d\"FK_TrackAlbumId\" fq-name\u003d\"Chinook.Track.FK_TrackAlbumId\" type\u003d\"fk\" pk-ref\u003d\"2\" fk-ref\u003d\"1\"/\u003e\u003crelation name\u003d\"FK_TrackGenreId\" fq-name\u003d\"Chinook.Track.FK_TrackGenreId\" type\u003d\"fk\" pk-ref\u003d\"3\" fk-ref\u003d\"1\"/\u003e\u003crelation name\u003d\"FK_TrackMediaTypeId\" fq-name\u003d\"Chinook.Track.FK_TrackMediaTypeId\" type\u003d\"fk\" pk-ref\u003d\"4\" fk-ref\u003d\"1\"/\u003e\u003c/relations\u003e\u003c/diagram\u003e"}},"constraints":{"Track_VK":{"type":"vpk","attributes":["GenreId"]}},"foreign-keys":[{"entity":"node://General/datasources/mysql8-1951fa1ed50-13a009561121434d/database/Chinook/table/Invoice","constraint":"Invoice_VK","attributes":{"Name":"BillingAddress"}}]},":Employee":{"foreign-keys":[{"entity":"node://General/datasources/mysql8-1951fa1ed50-13a009561121434d/database/Chinook/table/Customer","constraint":"Customer_VK","attributes":{"State":"State"}}]},":Customer":{"constraints":{"Customer_VK":{"type":"vpk","attributes":["State"]}}},":Invoice":{"constraints":{"Invoice_VK":{"type":"vpk","attributes":["BillingCity"]},"Invoice_VK":{"type":"vpk","attributes":["BillingAddress"]}}}}}},
+	"virtual-models": {"mysql8-1951fa1ed50-13a009561121434d":{"Chinook":{":InvoiceLine":{"constraints":{"InvoiceLine_VK":{"type":"vpk","attributes":["InvoiceId"]}}},":Track":{"properties":{"erd.diagram.state":{"serialized":"\u003cdiagram version\u003d\"1\" name\u003d\"empty\" time\u003d\"202502261126\"\u003e\u003centities\u003e\u003cdata-source id\u003d\"mysql8-1951fa1ed50-13a009561121434d\"\u003e\u003centity id\u003d\"1\" name\u003d\"Track\" fq-name\u003d\"Chinook.Track\" order\u003d\"0\" color-bg\u003d\"128,64,32\" x\u003d\"241\" y\u003d\"44\"\u003e\u003cpath name\u003d\"Chinook\"/\u003e\u003c/entity\u003e\u003centity id\u003d\"2\" name\u003d\"Album\" fq-name\u003d\"Chinook.Album\" order\u003d\"1\" x\u003d\"455\" y\u003d\"40\"\u003e\u003cpath name\u003d\"Chinook\"/\u003e\u003c/entity\u003e\u003centity id\u003d\"3\" name\u003d\"Genre\" fq-name\u003d\"Chinook.Genre\" order\u003d\"2\" x\u003d\"455\" y\u003d\"204\"\u003e\u003cpath name\u003d\"Chinook\"/\u003e\u003c/entity\u003e\u003centity id\u003d\"4\" name\u003d\"MediaType\" fq-name\u003d\"Chinook.MediaType\" order\u003d\"3\" x\u003d\"455\" y\u003d\"348\"\u003e\u003cpath name\u003d\"Chinook\"/\u003e\u003c/entity\u003e\u003centity id\u003d\"5\" name\u003d\"InvoiceLine\" fq-name\u003d\"Chinook.InvoiceLine\" order\u003d\"4\" x\u003d\"40\" y\u003d\"87\"\u003e\u003cpath name\u003d\"Chinook\"/\u003e\u003c/entity\u003e\u003centity id\u003d\"6\" name\u003d\"PlaylistTrack\" fq-name\u003d\"Chinook.PlaylistTrack\" order\u003d\"5\" x\u003d\"40\" y\u003d\"291\"\u003e\u003cpath name\u003d\"Chinook\"/\u003e\u003c/entity\u003e\u003c/data-source\u003e\u003c/entities\u003e\u003crelations\u003e\u003crelation name\u003d\"FK_InvoiceLineTrackId\" fq-name\u003d\"Chinook.InvoiceLine.FK_InvoiceLineTrackId\" type\u003d\"fk\" pk-ref\u003d\"1\" fk-ref\u003d\"5\"/\u003e\u003crelation name\u003d\"FK_PlaylistTrackTrackId\" fq-name\u003d\"Chinook.PlaylistTrack.FK_PlaylistTrackTrackId\" type\u003d\"fk\" pk-ref\u003d\"1\" fk-ref\u003d\"6\"/\u003e\u003crelation name\u003d\"FK_TrackAlbumId\" fq-name\u003d\"Chinook.Track.FK_TrackAlbumId\" type\u003d\"fk\" pk-ref\u003d\"2\" fk-ref\u003d\"1\"/\u003e\u003crelation name\u003d\"FK_TrackGenreId\" fq-name\u003d\"Chinook.Track.FK_TrackGenreId\" type\u003d\"fk\" pk-ref\u003d\"3\" fk-ref\u003d\"1\"/\u003e\u003crelation name\u003d\"FK_TrackMediaTypeId\" fq-name\u003d\"Chinook.Track.FK_TrackMediaTypeId\" type\u003d\"fk\" pk-ref\u003d\"4\" fk-ref\u003d\"1\"/\u003e\u003c/relations\u003e\u003c/diagram\u003e"}},"constraints":{"Track_VK":{"type":"vpk","attributes":["GenreId"]},"Track_VK":{"type":"vpk","attributes":["MediaTypeId"]}},"foreign-keys":[{"entity":"node://General/datasources/mysql8-1951fa1ed50-13a009561121434d/database/Chinook/table/Invoice","constraint":"Invoice_VK","attributes":{"Name":"BillingAddress"}}]},":Employee":{"constraints":{"Employee_VK":{"type":"vpk","attributes":["Address"]}},"foreign-keys":[{"entity":"node://General/datasources/mysql8-1951fa1ed50-13a009561121434d/database/Chinook/table/Customer","constraint":"Customer_VK","attributes":{"State":"State"}},{"entity":"node://General/datasources/mysql8-1951fa1ed50-13a009561121434d/database/Chinook/table/Track","constraint":"Track_VK","attributes":{"FirstName":"MediaTypeId"}}]},":Customer":{"constraints":{"Customer_VK":{"type":"vpk","attributes":["State"]}}},":Invoice":{"constraints":{"Invoice_VK":{"type":"vpk","attributes":["BillingAddress"]}}},":IT_Software_Inventory":{"constraints":{},"foreign-keys":[{"entity":"node://General/datasources/mysql8-1951fa1ed50-13a009561121434d/database/Chinook/table/Track","constraint":"Track_VK","attributes":{"Total Cost":"GenreId"}}]}}}},
 	"connection-types": {
 		"dev": {
 			"name": "Development",
@@ -326,39 +326,6 @@
 			"storageAccountId": "dbeavertestsa",
 			"cloudId": "azure",
 			"cloudName": "Azure configuration"
-		},
-		"aws": {
-			"defaultRegions": [
-				"us-east-1",
-				"us-east-2",
-				"us-west-1",
-				"us-west-2",
-				"ca-central-1",
-				"ca-west-1",
-				"il-central-1",
-				"sa-east-1"
-			],
-			"enabledServices": [
-				"rds",
-				"redshift",
-				"athena",
-				"dynamodb",
-				"documentdb",
-				"keyspaces"
-			],
-			"govRegionsEnabled": false,
-			"isoRegionsEnabled": false,
-			"s3Disabled": false,
-			"autoRegistrationEnabled": false,
-			"federatedAccessEnabled": false,
-			"credentials": {
-				"defaultAwsCredentials": false,
-				"sessionCredentials": false,
-				"ssoOverCli": false,
-				"crossAccountAccess": false
-			},
-			"cloudId": "aws",
-			"cloudName": "AWS configuration"
 		}
 	}
 }
