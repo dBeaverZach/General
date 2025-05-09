@@ -112,7 +112,7 @@
 					"lobEncoding": "BINARY",
 					"dataFileConflictBehavior": "ASK",
 					"blobFileConflictBehavior": "ASK",
-					"outputFolder": "/Users/zachantunes/Downloads",
+					"outputFolder": "/Users/zachantunes/git/General/General/CSV",
 					"outputFilePattern": "${table}_${timestamp}",
 					"outputEncoding": "UTF-8",
 					"outputTimestampPattern": "yyyyMMddHHmm",

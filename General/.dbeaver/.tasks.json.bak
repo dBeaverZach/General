@@ -86,7 +86,7 @@
 					"location": {
 						"type": "entity",
 						"project": "General",
-						"entityId": "mysql8-19572624b55-78f47156e0039219/Chinook/Customer"
+						"entityId": "mysql8-1951fa1ed50-13a009561121434d/Chinook/Customer"
 					}
 				}
 			],
@@ -96,12 +96,12 @@
 				}
 			],
 			"configuration": {
-				"maxJobCount": 1.0,
+				"maxJobCount": 1,
 				"showFinalMessage": true,
 				"DatabaseTransferProducer": {
 					"extractType": "SINGLE_QUERY",
-					"segmentSize": 100000.0,
-					"fetchSize": 10000.0,
+					"segmentSize": 100000,
+					"fetchSize": 10000,
 					"openNewConnections": false,
 					"queryRowCount": false,
 					"selectedColumnsOnly": false,
@@ -121,9 +121,10 @@
 					"useSingleFile": false,
 					"compressResults": false,
 					"splitOutFiles": false,
-					"maxOutFileSize": 1.0E7,
+					"maxOutFileSize": 10000000,
 					"formatterProfile": "",
-					"valueFormat": "UI"
+					"valueFormat": "UI",
+					"eventProcessors": {}
 				},
 				"producer": "database_producer",
 				"consumer": "stream_consumer",
@@ -159,9 +160,7 @@
 				{
 					"type": "databaseTransferProducer",
 					"location": {
-						"type": "entity",
-						"project": "General",
-						"entityId": "microsoft-1951fa13860-455f53789aeaa567/master/dbo/pokemon"
+						"type": "unknown"
 					}
 				}
 			],
@@ -241,6 +240,39 @@
 			],
 			"ignoreErrors": false,
 			"allNotifications": false
+		}
+	},
+	"ca19fa9b-4833-4536-b566-8b0a19b0b0e4": {
+		"task": "schemaCompare",
+		"label": "Migrate Customer MySQL to SQL Server",
+		"description": "",
+		"createTime": "202505071759",
+		"updateTime": "202505071759",
+		"state": {
+			"project": "General",
+			"onlyChangelog": false,
+			"sourceContainerId": "mysql8-1951fa1ed50-13a009561121434d",
+			"sourceObjects": [
+				"mysql8-1951fa1ed50-13a009561121434d/Chinook/Customer"
+			],
+			"targetContainerId": "microsoft-1966dee8cbc-2130a955d9aecae5",
+			"targetObjects": [
+				"microsoft-1966dee8cbc-2130a955d9aecae5/master/dbo"
+			],
+			"doCreate": true,
+			"doDrop": true,
+			"doChange": true,
+			"quoteAllObjectsNames": true,
+			"caseInsensitiveCompare": true,
+			"exportFile": false,
+			"outputFolderPath": "/Users/zachantunes",
+			"outputFilePattern": "compare-${database}-${timestamp}.sql",
+			"reportEngineId": "",
+			"logLevel": "OFF",
+			"containersMapping": {
+				"mysql8-1951fa1ed50-13a009561121434d/Chinook": "microsoft-1966dee8cbc-2130a955d9aecae5/master/dbo"
+			},
+			"hasLiquibaseLicense": false
 		}
 	}
 }
